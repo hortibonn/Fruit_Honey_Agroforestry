@@ -274,13 +274,13 @@ AF_benefit <- function(x, varnames) {
   AF_flax_benefit <- vv(flax_value_p, cv_flax_value_p, n_years_c) * AF_flax_yield
   
   AF_org_soy_yield[Org_soy_indices] <-
-    vv(AF_org_soy_yield, cv_org_soy_yield_p, length(Org_soy_indices)) * (1 - Perc_yield_reduction[Org_soy_indices]) *
+    vv(org_soy_yield_p, cv_org_soy_yield_p, length(Org_soy_indices)) * (1 - Perc_yield_reduction[Org_soy_indices]) *
     Arable_area_AF #* AF_Chance_perc_weather_fail #* AF_chance_perc_crop_fail
   
   AF_org_soy_benefit <- vv(org_soy_value_p, cv_org_soy_value_p, n_years_c) * AF_org_soy_yield
   
   AF_spelt_yield[Spelt_indices] <-
-    vv(AF_spelt_yield, cv_spelt_yield_p, length(Spelt_indices)) * (1 - Perc_yield_reduction[Spelt_indices]) *
+    vv(spelt_yield_p, cv_spelt_yield_p, length(Spelt_indices)) * (1 - Perc_yield_reduction[Spelt_indices]) *
     Arable_area_AF #* AF_Chance_perc_weather_fail #* AF_chance_perc_crop_fail
   
   AF_spelt_benefit <- vv(spelt_value_p, cv_spelt_value_p, n_years_c) * AF_spelt_yield
