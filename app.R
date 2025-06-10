@@ -171,14 +171,8 @@ ui <- fluidPage(
                          "Expertise categories",
                          tags$span(
                            icon("circle-question"),
-                           title = "Select your main expertise to modify only the variables suited to such expertise. Ultimately, we are all experts to a higher or lower degree in all categories. You too :) 
-                           
-                           But we recommend that the first time you use this interface you select only one or two categories in order to get familiar with it. The simulations will still run with the default values for those expertise categories that you do not select.
-                           
-                           If you do not check any box, you will see all the variables of the model (i.e.: all expertise categories).
-                           
-                           If you are the decision maker, e.g.: you are a farmer thinking about implementing agroforestry in treeles land, please check the Decision Maker box to set basic variables that serve to quantify your interests and motivations",
-                           style = "cursor: help; margin-left: 8px;"
+                           title = "Select your main expertise to modify only the variables suited to such expertise. Ultimately, we are all experts to a higher or lower degree in all categories. You too :) \n\nBut we recommend that the first time you use this interface you select only one or two categories in order to get familiar with it. The simulations will still run with the default values for those expertise categories that you do not select. \nIf you do not check any box, you will see all the variables of the model (i.e.: all expertise categories). \nIf you are the decision maker, e.g.: you are a farmer thinking about implementing agroforestry in treeles land, please check the Decision Maker box to set basic variables that serve to quantify your interests and motivations",
+                           style = "cursor: help;"
                          )
                        ),
                        uiOutput("category_filter_ui")
@@ -238,7 +232,7 @@ ui <- fluidPage(
               In the tab 'Expertise categories' you can select the categories for which you want to modify the default values. This is useful if you do not feel confident enough to provide estimates for all the variables of the model.\n
               When clicking 'Run the model', the app will perform multiple runs of the model, each with a unique combination of values of the input variables, always within the range defined by the bars of the left-hand side tabs.\n
               After the model is computed, the results will be displayed here below\n
-              In the tab 'Funding schemes' you can select the funding scheme of your region of interest. If you do not find the funding schemes of your regions of interest, please contact us to include it (mjimene1@uni-bonn.de)"
+              In the tab 'Funding schemes' you can select the funding scheme of your region of interest. If you do not find the funding schemes of your regions of interest, please contact us to include it (pkasargo@uni-bonn.de)"
               ),
               tags$a(
                 "Click here for latest info on Sustainable Farming Incentive",
@@ -740,17 +734,18 @@ server <- function(input, output, session) {
     input_file <- current_input_table()
     
     # 6. Run Monte-Carlo
-    decisionSupport::mcSimulation(
-      estimate          = decisionSupport::as.estimate(input_file),
-      model_function    = AF_benefit,
-      numberOfModelRuns = input$num_simulations_c,
-      functionSyntax    = "plainNames"
-      # ,model_function    = model_function
-      # ,model_function    = walnut_local
-      # ,functionSyntax    = "data.frameNames"
-      # ,crop_rotation     = rot_vec
-    )
-    
+    mc_d <- 
+      decisionSupport::mcSimulation(
+        estimate          = decisionSupport::as.estimate(input_file),
+        model_function    = AF_benefit,
+        numberOfModelRuns = input$num_simulations_c,
+        functionSyntax    = "plainNames"
+        # ,model_function    = model_function
+        # ,model_function    = walnut_local
+        # ,functionSyntax    = "data.frameNames"
+        # ,crop_rotation     = rot_vec
+      )
+    print(mc_d)
   })
   
   ## Generating plots ----
@@ -863,8 +858,8 @@ server <- function(input, output, session) {
       y_axis_name = "Annual cash-flow from Agroforestry (€)",
       facet_labels = "") |>
       add_meta(
-        title   = "Figure 4. Annual cash-flow of the agroforestry intervention", 
-        caption = 'Figure 4 shows the annual balance (expressed in €) of alley-cropping in the intervened field.'
+        title   = "Figure 3. Annual cash-flow of the agroforestry intervention", 
+        caption = 'Figure 3 shows the annual balance (expressed in €) of alley-cropping in the intervened field.'
       )
     
     plot5 <- decisionSupport::plot_cashflow(
@@ -873,8 +868,8 @@ server <- function(input, output, session) {
       y_axis_name = "Cumulative cash-flow from Agroforestry (€)",
       facet_labels = "") |>
       add_meta(
-        title   = "Figure 5. Cumulative cash-flow of the agroforestry intervention", 
-        caption = "Figure 5 shows the cumulative annual balance (expressed in €) of alley-cropping in the intervened field."
+        title   = "Figure 4. Cumulative cash-flow of the agroforestry intervention", 
+        caption = "Figure 4 shows the cumulative annual balance (expressed in €) of alley-cropping in the intervened field."
       )
     
     # plot6 <- decisionSupport::plot_cashflow(

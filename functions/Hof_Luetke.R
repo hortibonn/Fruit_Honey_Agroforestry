@@ -878,20 +878,20 @@ AF_benefit <- function(x, varnames) {
 # PLOTS####
 # plot NPV distributions
 # NPV Tradeoff
-plot_distributions(mcSimulation_object = mcSimulation_results, 
-                   vars = c("NPVtrade_off", "NPV_Treeless_System"),
-                   method = 'smooth_simple_overlay', 
-                   base_size = 7,
-                   x_axis_name = "Outcome as NPV in € for 7.87 ha",
-                   scale_x_continuous(labels = function(x) x / 100000),
-                   ggtitle("Net Present Value of the system over 60 years with intangibles"),
-                   legend.position="bottom")
-ggsave(
-  filename = "images/NPV_tardeoff_Treeless_vs_NPV_AF.png",
-  plot = last_plot(),
-  width = 5, 
-  height = 3
-)
+# plot_distributions(mcSimulation_object = mcSimulation_results, 
+#                    vars = c("NPVtrade_off", "NPV_Treeless_System"),
+#                    method = 'smooth_simple_overlay', 
+#                    base_size = 7,
+#                    x_axis_name = "Outcome as NPV in € for 7.87 ha",
+#                    scale_x_continuous(labels = function(x) x / 100000),
+#                    ggtitle("Net Present Value of the system over 60 years with intangibles"),
+#                    legend.position="bottom")
+# ggsave(
+#   filename = "images/NPV_tardeoff_Treeless_vs_NPV_AF.png",
+#   plot = last_plot(),
+#   width = 5, 
+#   height = 3
+# )
 
 # plot_distributions(mcSimulation_object = mcSimulation_results, 
 #                    vars = c("NPVtradeoff_farm_level", "NPV_Treeless_System"),
@@ -907,21 +907,21 @@ ggsave(
 #   width = 5, 
 #   height = 3
 # )
-# AF with intangibles and Treeless
-plot_distributions(mcSimulation_object = mcSimulation_results, 
-                   vars = c("NPV_Treeless_System", "NPV_Agroforestry_System"),
-                   method = 'smooth_simple_overlay', 
-                   base_size = 7,
-                   x_axis_name = "Outcome as NPV in 10 ha mixed fruits system",
-                   scale_x_continuous(labels = function(x) x / 100000),
-                   ggtitle("Net Present Value of the system over 60 years with intangibles"),
-                   legend.position="bottom")
-ggsave(
-  filename = "images/NPV_Treeless_vs_NPV_AF.png",
-  plot = last_plot(),
-  width = 5, 
-  height = 3
-)
+# # AF with intangibles and Treeless
+# plot_distributions(mcSimulation_object = mcSimulation_results, 
+#                    vars = c("NPV_Treeless_System", "NPV_Agroforestry_System"),
+#                    method = 'smooth_simple_overlay', 
+#                    base_size = 7,
+#                    x_axis_name = "Outcome as NPV in 10 ha mixed fruits system",
+#                    scale_x_continuous(labels = function(x) x / 100000),
+#                    ggtitle("Net Present Value of the system over 60 years with intangibles"),
+#                    legend.position="bottom")
+# ggsave(
+#   filename = "images/NPV_Treeless_vs_NPV_AF.png",
+#   plot = last_plot(),
+#   width = 5, 
+#   height = 3
+# )
 # AF without intangibles and Treeless
 # plot_distributions(mcSimulation_object = mcSimulation_results, 
 #                    vars = c("NPV_Treeless_System", "NPV_AF_Farm_level"),
@@ -941,16 +941,16 @@ ggsave(
 
 # boxplots of outcome distributions
 # AF with intangibles and Treeless
-decisionSupport::plot_distributions(mcSimulation_object = mcSimulation_results, 
-                                    vars = c("NPV_Treeless_System","NPV_Agroforestry_System"),
-                                    method = 'boxplot',
-                                    x_axis_name = "Outcome as NPV in € for 10 ha mixed fruits system",
-                                    ggtitle("Net Present Value of the system over 60 years with intangibles"),
-                                    legend.position="right")
-ggsave(
-  filename = "images/NPV_Treeless_vs_NPV_AF_boxplot.png",
-  plot = last_plot()
-)
+# decisionSupport::plot_distributions(mcSimulation_object = mcSimulation_results, 
+#                                     vars = c("NPV_Treeless_System","NPV_Agroforestry_System"),
+#                                     method = 'boxplot',
+#                                     x_axis_name = "Outcome as NPV in € for 10 ha mixed fruits system",
+#                                     ggtitle("Net Present Value of the system over 60 years with intangibles"),
+#                                     legend.position="right")
+# ggsave(
+#   filename = "images/NPV_Treeless_vs_NPV_AF_boxplot.png",
+#   plot = last_plot()
+# )
 # AF without intangibles and Treeless
 # decisionSupport::plot_distributions(mcSimulation_object = mcSimulation_results, 
 #                                     vars = c("NPV_Treeless_System","NPV_AF_Farm_level"),
@@ -966,19 +966,19 @@ ggsave(
 
 # value of the decision (difference in NPV between AF and treeless
 # tradeoff between treeless and AF with intangibles
-decisionSupport::plot_distributions(mcSimulation_object = mcSimulation_results, 
-                                    vars = "NPVtrade_off",
-                                    old_names = "NPVtrade_off",
-                                    new_names = "NPV (over 40 years) of the decision",
-                                    method = 'boxplot_density',
-                                    y_axis_name = "Probability",
-                                    x_axis_name = "Net decision outcome (NPV in Euro)")
-ggsave(
-  filename = "images/NPV_Treeless_vs_NPV_AF_Tradeoff.png",
-  plot = last_plot(),
-  width = 5, 
-  height = 3
-)
+# decisionSupport::plot_distributions(mcSimulation_object = mcSimulation_results, 
+#                                     vars = "NPVtrade_off",
+#                                     old_names = "NPVtrade_off",
+#                                     new_names = "NPV (over 40 years) of the decision",
+#                                     method = 'boxplot_density',
+#                                     y_axis_name = "Probability",
+#                                     x_axis_name = "Net decision outcome (NPV in Euro)")
+# ggsave(
+#   filename = "images/NPV_Treeless_vs_NPV_AF_Tradeoff.png",
+#   plot = last_plot(),
+#   width = 5, 
+#   height = 3
+# )
 # tradeoff between treeless and AF without intangibles
 # decisionSupport::plot_distributions(mcSimulation_object = mcSimulation_results, 
 #                                     vars = "NPVtradeoff_farm_level",
@@ -996,37 +996,37 @@ ggsave(
 
 # Cashflow analysis
 # AF with intangiles
-decisionSupport::plot_cashflow(
-  mcSimulation_object = mcSimulation_results,
-  cashflow_var_name = "AFcashflow",
-  x_axis_name = "Timeline of intervention [a]",
-  y_axis_name = "Annual Cashflow [€]",
-  color_25_75 = "navajowhite",
-  color_5_95 = "green4",
-  color_median = "darkblue"
-)
-ggsave(
-  filename = "images/AnnualCashflow_AF.png",
-  plot = last_plot(),
-  width = 5, 
-  height = 3
-)
-#Treeless
-plot_cashflow(
-  mcSimulation_object = mcSimulation_results,
-  cashflow_var_name = "Treelesscashflow",
-  x_axis_name = "Timeline of intervention [a]",
-  y_axis_name = "Annual Cashflow [€]",
-  color_25_75 = "navajowhite",
-  color_5_95 = "green4",
-  color_median = "darkblue",
-)
-ggsave(
-  filename = "images/AnnualCashflow_Treeless.png",
-  plot = last_plot(),
-  width = 5, 
-  height = 3
-)
+# decisionSupport::plot_cashflow(
+#   mcSimulation_object = mcSimulation_results,
+#   cashflow_var_name = "AFcashflow",
+#   x_axis_name = "Timeline of intervention [a]",
+#   y_axis_name = "Annual Cashflow [€]",
+#   color_25_75 = "navajowhite",
+#   color_5_95 = "green4",
+#   color_median = "darkblue"
+# )
+# ggsave(
+#   filename = "images/AnnualCashflow_AF.png",
+#   plot = last_plot(),
+#   width = 5, 
+#   height = 3
+# )
+# #Treeless
+# plot_cashflow(
+#   mcSimulation_object = mcSimulation_results,
+#   cashflow_var_name = "Treelesscashflow",
+#   x_axis_name = "Timeline of intervention [a]",
+#   y_axis_name = "Annual Cashflow [€]",
+#   color_25_75 = "navajowhite",
+#   color_5_95 = "green4",
+#   color_median = "darkblue",
+# )
+# ggsave(
+#   filename = "images/AnnualCashflow_Treeless.png",
+#   plot = last_plot(),
+#   width = 5, 
+#   height = 3
+# )
 # AF without intangiles
 # plot_cashflow(
 #   mcSimulation_object = mcSimulation_results,
@@ -1044,39 +1044,39 @@ ggsave(
 #   height = 3
 # )
 #Cumulative cashflow of AF with intangiles
-plot_cashflow(
-  mcSimulation_object = mcSimulation_results,
-  cashflow_var_name = "AFcumcashflow",
-  x_axis_name = "Timeline of intervention [a]",
-  y_axis_name = "Cumulative Cashflow [€]",
-  color_25_75 = "navajowhite",
-  color_5_95 = "green4",
-  color_median = "darkblue",
-)
-ggsave(
-  filename = "images/CumulativeCashflow_AF.png",
-  plot = last_plot(),
-  width = 5, 
-  height = 3
-)
-
-
-# Cumulative cashflow of treeless
-plot_cashflow(
-  mcSimulation_object = mcSimulation_results,
-  cashflow_var_name = "Treelesscumcashflow",
-  x_axis_name = "Timeline of intervention [a]",
-  y_axis_name = "Cumulative Cashflow [€]",
-  color_25_75 = "navajowhite",
-  color_5_95 = "green4",
-  color_median = "darkblue",
-)
-ggsave(
-  filename = "images/AnnualCashflow_Treeless.png",
-  plot = last_plot(),
-  width = 5, 
-  height = 3
-)
+# plot_cashflow(
+#   mcSimulation_object = mcSimulation_results,
+#   cashflow_var_name = "AFcumcashflow",
+#   x_axis_name = "Timeline of intervention [a]",
+#   y_axis_name = "Cumulative Cashflow [€]",
+#   color_25_75 = "navajowhite",
+#   color_5_95 = "green4",
+#   color_median = "darkblue",
+# )
+# ggsave(
+#   filename = "images/CumulativeCashflow_AF.png",
+#   plot = last_plot(),
+#   width = 5, 
+#   height = 3
+# )
+# 
+# 
+# # Cumulative cashflow of treeless
+# plot_cashflow(
+#   mcSimulation_object = mcSimulation_results,
+#   cashflow_var_name = "Treelesscumcashflow",
+#   x_axis_name = "Timeline of intervention [a]",
+#   y_axis_name = "Cumulative Cashflow [€]",
+#   color_25_75 = "navajowhite",
+#   color_5_95 = "green4",
+#   color_median = "darkblue",
+# )
+# ggsave(
+#   filename = "images/AnnualCashflow_Treeless.png",
+#   plot = last_plot(),
+#   width = 5, 
+#   height = 3
+# )
 #Cumulative cashflow of AF without intangiles
 # plot_cashflow(
 #   mcSimulation_object = mcSimulation_results,
@@ -1096,25 +1096,25 @@ ggsave(
 
 #Projection to Latent Structures (PLS) analysis
 # AF with intangibles
-pls_result_AF <- plsr.mcSimulation(object = mcSimulation_results,
-                                   resultName = names(mcSimulation_results$y)[1], ncomp = 1)
-plot_pls(pls_result_AF, input_table = input_file, cut_off_line = 1, threshold = 0.5)
-ggsave(
-  filename = "images/PLS_VIP_AF.png",
-  plot = last_plot(),
-  width = 5, 
-  height = 3
-)
-#treeless
-pls_result_treeless <- plsr.mcSimulation(object = mcSimulation_results,
-                                         resultName = names(mcSimulation_results$y)[2], ncomp = 1)
-plot_pls(pls_result_treeless, input_table = input_file, cut_off_line = 1, threshold = 0.5)
-ggsave(
-  filename = "images/PLS_VIP_Treeless.png",
-  plot = last_plot(),
-  width = 5, 
-  height = 3
-)
+# pls_result_AF <- plsr.mcSimulation(object = mcSimulation_results,
+#                                    resultName = names(mcSimulation_results$y)[1], ncomp = 1)
+# plot_pls(pls_result_AF, input_table = input_file, cut_off_line = 1, threshold = 0.5)
+# ggsave(
+#   filename = "images/PLS_VIP_AF.png",
+#   plot = last_plot(),
+#   width = 5, 
+#   height = 3
+# )
+# #treeless
+# pls_result_treeless <- plsr.mcSimulation(object = mcSimulation_results,
+#                                          resultName = names(mcSimulation_results$y)[2], ncomp = 1)
+# plot_pls(pls_result_treeless, input_table = input_file, cut_off_line = 1, threshold = 0.5)
+# ggsave(
+#   filename = "images/PLS_VIP_Treeless.png",
+#   plot = last_plot(),
+#   width = 5, 
+#   height = 3
+# )
 #AF without intangibles
 # pls_result_AF_farm <- plsr.mcSimulation(object = mcSimulation_results,
 #                                         resultName = names(mcSimulation_results$y)[3], ncomp = 1)
@@ -1128,9 +1128,9 @@ ggsave(
 
 
 #Value of Information Analysis using decisionSupport package
-mcSimulation_table <- data.frame(mcSimulation_results$x, mcSimulation_results$y[4:5])
-evpi <- multi_EVPI(mc = mcSimulation_table, first_out_var = "NPVtrade_off")
-plot_evpi(evpi, decision_vars = "NPVtrade_off")
+# mcSimulation_table <- data.frame(mcSimulation_results$x, mcSimulation_results$y[4:5])
+# evpi <- multi_EVPI(mc = mcSimulation_table, first_out_var = "NPVtrade_off")
+# plot_evpi(evpi, decision_vars = "NPVtrade_off")
 
 
 #END!!!!##
