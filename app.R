@@ -649,7 +649,7 @@ server <- function(input, output, session) {
       input_file <- bind_rows(input_file, funding_df)
     }
     
-    View(input_file)
+    # View(input_file)
     
     # # 4. Save UI snapshot (optional)
     # saveRDS(list(sheet_names, input_file), "data/Walnut_grain_veg_tub_ui_updated.RDS")
