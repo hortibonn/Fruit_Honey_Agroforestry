@@ -892,7 +892,7 @@ server <- function(input, output, session) {
       add_meta(
         title    = "Figure 2. Distribution of the *incremental* NPV",
         subtitle = "Difference between agroforestry and treeless farming under identical conditions",
-        caption  = "Figure 2 shows the Net Present Value (NPV) distributions of the decision to establish the agroforestry system
+        caption  = "Figure 2 shows the NPV distributions of the decision to establish the agroforestry system
                 as compared to the decision to continue with monoculture for the specified time (i.e., NPV agroforestry - NPV monoculture under identical conditions).
                 The x-axis displays NPV values (i.e., the sum of discounted annual cash flows) and y-axis displays the probability of each NPV amount to occur (i.e., higer y-values indicate higher probability)"
         , legend = "none")
@@ -1011,7 +1011,7 @@ Scenarios involving funding (like DeFAF-suggested or EcoScheme3 and regional) ge
       title = "Run EVPI analysis?",
       "Do you want to assess the Expected Value of Perfect Information (EVPI)?
       This step may take a while, but you can explore the other graphs while the EVPI is processed.
-      The EVPI graph will appear at the bottom of the page, below the last of the other graphs.",
+      The EVPI graph will appear at the bottom of the page, below the last graph.",
       footer = tagList(
         modalButton("No"),
         actionButton("confirm_evpi", "Yes, run EVPI")
@@ -1029,7 +1029,7 @@ Scenarios involving funding (like DeFAF-suggested or EcoScheme3 and regional) ge
           mc_data$x,
           NPV_decision_AF1 = mc_data$y$NPVtrade_off
         ))
-        
+        # Provide the NPV_decision variable to calculate EVPI
         evpi_result <- decisionSupport::multi_EVPI(evpi_input,  "NPVtrade_off")
         
         # saveRDS(evpi_input, "evpi_input_test.rds")
