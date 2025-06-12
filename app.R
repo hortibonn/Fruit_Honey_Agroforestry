@@ -721,6 +721,7 @@ server <- function(input, output, session) {
   observeEvent(input$load_btn, {
     req(input$state_picker)
     obj <- readRDS(file.path(get_user_dir(), input$state_picker))
+    bslib::accordion_panel_open("collapseSidebar",TRUE,session)
     vals <- obj$raw_inputs
     
     restore_one <- function(id, val) {
