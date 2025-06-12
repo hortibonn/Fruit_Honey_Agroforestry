@@ -551,12 +551,12 @@ AF_benefit <- function(x, varnames) {
   #Subsidy in AF system
   ES3_subsidy <- rep(0, n_years_c)
   ES3_subsidy[1:n_years_c] <- annual_funding_schemes_c * tree_row_area_c
+  # external support
   Annual_external_support <- rep((tree_row_area_c *annual_external_support_c),  n_years_c)
   Onetime_external_support <- rep(0, n_years_c)
-  # funding_onetime_schemes_c <- funding_onetime_schemes_c %||% 0
   Onetime_external_support[1] <- funding_onetime_schemes_c
   #Agroforestry total benefit
-  AF_total_benefit <- AF_tree_benefit + AF_arable_benefit + ES3_subsidy + Nonmarket_ES_benefit + Annual_external_support +  Onetime_external_support[1]
+  AF_total_benefit <- AF_tree_benefit + AF_arable_benefit + ES3_subsidy + Nonmarket_ES_benefit + Annual_external_support +  Onetime_external_support
   
   AF_total_benefit_nofund <- AF_tree_benefit + AF_arable_benefit + Nonmarket_ES_benefit
   #AF costs ####
