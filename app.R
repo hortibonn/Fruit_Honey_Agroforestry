@@ -112,6 +112,26 @@ ui <- fluidPage(
     tags$title("Agroforestry Decision Support Tool"),
     tags$link(rel = "shortcut icon", href = "INRES.png")
   ),
+      tags$style(HTML("
+    /* Scroll wrapper: scrolls horizontally *and* vertically only when needed */
+    .scroll-xy {
+      overflow-x: auto;                 /* left–right scroll  */
+      overflow-y: auto;                 /* top–bottom scroll  */
+      -webkit-overflow-scrolling: touch;/* smooth on iOS      */
+      max-height: 80vh;                 /* optional: stop it taking more than
+                                         80 % of the viewport height       */
+  }
+  
+  /* Keep any Shiny plot inside that wrapper from shrinking */
+  .scroll-xy .shiny-plot-output {
+    min-width: 900px;                 /* choose your desktop width */
+  }
+                    ")
+    )
+  ),
+
+
+
   
   tags$div(
     style = "display:flex; align-items:center;justify-content:space-between;
