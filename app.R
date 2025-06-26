@@ -128,8 +128,8 @@ ui <- fluidPage(
     min-width: 900px;                 /* choose your desktop width */
   }
                     ")
-    ),
-  #),
+   # )
+  ),
   
   tags$div(
     style = "display:flex; align-items:center;justify-content:space-between;
