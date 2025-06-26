@@ -867,19 +867,19 @@ server <- function(input, output, session) {
           face   = "bold",
           width  = unit(1, "npc"),  # full plot width
           halign = 0.5,              # centered
-          margin = margin(t = 6, b = 12)
+          margin = margin(t = 6, b = 20)
         ),
         plot.subtitle = element_textbox_simple(
           size   = 18,
           width  = unit(1, "npc"),
           halign = 0.5,
-          margin = margin(t = 6, b = 12)
+          margin = margin(t = 6, b = 20)
         ),
         plot.caption  = element_textbox_simple(
           size   = 16,
           width  = unit(0.98, "npc"),
           halign = 0,              # left-aligned
-          margin = margin(t = 6, b = 12),
+          margin = margin(t = 6, b = 20),
           hjust = 0,
           vjust = 1
         ),
