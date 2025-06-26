@@ -6021,28 +6021,28 @@
   },
   "files": {
     "app.R": {
-      "checksum": "2f68865a2b75d86cab1343668de30e16"
+      "checksum": "e92eb44d541a2ae0d7fde2b695be58bd"
     },
     "data/funding_data.xlsx": {
       "checksum": "5bb487279d8a9f171265bf5bdda346e5"
     },
     "data/funding_data1.xlsx": {
-      "checksum": "24723a586f0eac68783cab2d4cefda78"
+      "checksum": "9ba748a7f84ba1b931496086de0975d5"
     },
     "data/Hof_luetke_input_table.xlsx": {
-      "checksum": "d573fd25abc0cdc0cd68492ceb7b62ab"
+      "checksum": "01ef8e683e461b3cdac27d487c45fe22"
     },
     "functions/dynamic-helper.R": {
-      "checksum": "4def96388e03e57720a09c088e25a3f1"
+      "checksum": "8b873c389ff0f4e4cce5e4984f793ab2"
     },
     "functions/funding_server.R": {
       "checksum": "0068a3c3bfced3d629c51dab496d3e07"
     },
     "functions/Hof_Luetke.R": {
-      "checksum": "6917f766f59a9c988fa6139554457838"
+      "checksum": "d9402c07bf4c2301fea82d5852eb140a"
     },
     "functions/plainNames-to-dataframNames.R": {
-      "checksum": "0d335922c9fcdc06cb684c2b8369ac6d"
+      "checksum": "d6d1a838a2c50ea1141a3b682df23399"
     },
     "functions/saveLoad-module.R": {
       "checksum": "d89e69ea6ccd52ea554b9c57a1361821"
@@ -6061,6 +6061,12 @@
     },
     "README.md": {
       "checksum": "35b568fb1aa7c1e23df77b0becc62f44"
+    },
+    "www/Fruit-Honey-Luetke.png": {
+      "checksum": "8b4460e6d9a0e8ade5d7bb69743c19d2"
+    },
+    "www/INRES.png": {
+      "checksum": "e81531e064aa61fb0c02b6d669ca61a3"
     },
     "www/INRES_UniBonn.png": {
       "checksum": "e3735261f7a24ae89465aa7d8bb73578"
