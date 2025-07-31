@@ -334,6 +334,16 @@ ui <- fluidPage(
               ),
               br(),
               uiOutput("plot8_dl_ui"),
+              tags$img(src = "Funding_declaration.png", height = "100px",
+                       style = "margin-right: auto; max-width: 100%; height: auto; cursor: pointer;"),
+              # tags$h6("Designed and Developed by INRES Horticultural Sciences, University of Bonn"),
+              tags$div(
+                style = "text-align:center;",
+                tags$h6("Designed and Developed by INRES Horticultural Sciences, University of Bonn ",
+                tags$a("Disclaimer", href = "https://agroreforest.eu/reforest-tools-disclaimer/",
+                target = "_blank")
+                        )
+                    )
               br(), br(),br(), br(),
               
     )
