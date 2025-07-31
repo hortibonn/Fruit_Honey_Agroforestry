@@ -343,7 +343,7 @@ ui <- fluidPage(
                 tags$a("Disclaimer", href = "https://agroreforest.eu/reforest-tools-disclaimer/",
                 target = "_blank")
                         )
-                    )
+                    ),
               br(), br(),br(), br(),
               
     )
