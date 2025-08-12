@@ -341,11 +341,13 @@ ui <- fluidPage(
                 style = "text-align:center;",
                 tags$h6("Designed and Developed by INRES Horticultural Sciences, University of Bonn ",
                         br(),
-                tags$a("Disclaimer", href = "https://agroreforest.eu/reforest-tools-disclaimer/",
+                tags$p(
+                  tags$a("Disclaimer", href = "https://agroreforest.eu/reforest-tools-disclaimer/",
                 target = "_blank"),
-                     tags$p(" | "),   
+                     " | "   
                 tags$a("View Source", href = "https://github.com/hortibonn/Fruit_Honey_Agroforestry/",
-                target = "_blank"),
+                target = "_blank")
+                  ),
                         )
                     ),
               br(), 
