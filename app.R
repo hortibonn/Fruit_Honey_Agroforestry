@@ -23,6 +23,11 @@ if (!requireNamespace("shiny", quietly = TRUE)) {
 }
 library(shiny)
 
+if (!requireNamespace("waiter", quietly = TRUE)) {
+  install.packages("waiter")
+}
+library(waiter)
+
 if (!requireNamespace("readxl", quietly = TRUE)) {
   install.packages("readxl")
 }
@@ -107,6 +112,9 @@ ui <- fluidPage(
   theme = bs_theme(version = 5,
                    bootswatch = 'flatly',
                    base_font = font_google("Roboto")), 
+  
+  use_waiter(),
+  
   # Set actual browser tab title and favicon
   tags$head(
     tags$title("Agroforestry Decision Support Tool"),
@@ -836,6 +844,21 @@ server <- function(input, output, session) {
   
   ## Monte Carlo Simulation ----
   mcSimulation_results <- eventReactive(input$run_simulation, {
+    
+    waiter_show(
+      html = tagList(
+        spin_fading_circles(),
+        "Running Model and generating Plots ..."
+      ),
+      color = "rgba(0, 0, 0, 0.8)"
+    )
+    
+    # If something throws, hide the waiter so users aren't stuck
+    ok <- FALSE
+    on.exit({
+      if (!ok) waiter_hide()
+    }, add = TRUE)
+    
     # sadly this still needs to be assigned globally at the moment - otherwise the Model function wont see the vector.
     # functionSyntax = plainNames assigns the model to another variable with its own environment (e) - this environment only holds the input table and the model (does not see rot_vec)
     # assigning to globalEnv will assign it to an environment shared by up to 20 people. people could overwrite their crop rotation vector.
@@ -859,7 +882,7 @@ server <- function(input, output, session) {
     # 6. Run Monte-Carlo
     # Provide model_function
     # mc_d <- 
-    decisionSupport::mcSimulation(
+    data <- decisionSupport::mcSimulation(
       estimate          = decisionSupport::as.estimate(input_file),
       model_function    = AF_benefit,
       numberOfModelRuns = input$num_simulations_c,
@@ -869,6 +892,13 @@ server <- function(input, output, session) {
       # ,functionSyntax    = "data.frameNames"
       # ,crop_rotation     = rot_vec
     )
+    
+    # Hide AFTER dependent outputs have re-rendered
+    session$onFlushed(function() waiter_hide(), once = TRUE)
+    ok <- TRUE
+    
+    data  
+    
     # print(mc_d)
   })
   
